@@ -9,7 +9,24 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.nadiatarashkevich.mvcexplandcollapse.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.nadiatarashkevich.mvcexplandcollapse.startup.MyProjectActivity" />
+        <applicationService serviceImplementation="com.github.nadiatarashkevich.mvcexplandcollapse.settings.MvcSettingsState"/>
+        <applicationConfigurable instance="com.github.nadiatarashkevich.mvcexplandcollapse.settings.MvcSettingsConfigurable"
+                                 id="com.github.nadiatarashkevich.mvcexplandcollapse.settings.MvcSettingsConfigurable"
+                                 parentId="tools"
+                                 key="mvc.settings.title"/>
     </extensions>
+
+    <actions>
+        <action id="MvcExpand_1" class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandAction1"/>
+        <action id="MvcExpand_2" class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandAction2"/>
+        <action id="MvcExpand_3" class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandAction3"/>
+        <action id="MvcExpand_4" class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandAction4"/>
+        <action id="MvcExpand_5" class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandAction5"/>
+
+        <group id="MvcExpandCollapseGroup"
+               class="com.github.nadiatarashkevich.mvcexplandcollapse.actions.MvcExpandCollapseActionGroup"
+               icon="com.github.nadiatarashkevich.mvcexplandcollapse.icons.MvcIcons.MvcGroup">
+            <add-to-group group-id="ProjectViewToolbar" anchor="last"/>
+        </group>
+    </actions>
 </idea-plugin>
